@@ -1,0 +1,9 @@
+# large source images not part of the deck
+ChatGPT Image*.png
+*.png
+
+# OS / editor junk
+Thumbs.db
+.DS_Store
+*.tmp
+*~

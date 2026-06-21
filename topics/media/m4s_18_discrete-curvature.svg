@@ -1,0 +1,60 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Angle defect at a cone vertex</title>
+  <desc id="d">A triangle fan meeting at apex i with tip angles phi summing to less than a full turn; the missing wedge is the angle defect.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FC6255"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="21">Angle defect at a vertex</text>
+  <text x="24" y="56" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">Triangles fan around apex i. Their tip angles fall short of a full turn.</text>
+
+  <!-- apex -->
+  <g>
+    <!-- five fan triangles; apex at (300,250) -->
+    <g fill="#16203a" fill-opacity="0.55" stroke="#9CE8D6" stroke-width="1.4">
+      <path d="M300 250 L300 120 L432 168 Z"/>
+      <path d="M300 250 L432 168 L470 300 Z"/>
+      <path d="M300 250 L470 300 L356 384 Z"/>
+      <path d="M300 250 L356 384 L196 360 Z"/>
+      <path d="M300 250 L196 360 L184 176 Z"/>
+    </g>
+    <!-- the missing wedge between last and first ray -->
+    <path d="M300 250 L184 176 L300 120 Z" fill="#FC6255" fill-opacity="0.16" stroke="#FC6255" stroke-width="1.3" stroke-dasharray="5 4"/>
+
+    <!-- tip-angle labels phi -->
+    <text x="352" y="178" fill="#83C167" font-family="Georgia,serif" font-size="14" font-style="italic">&#966;&#8321;</text>
+    <text x="392" y="248" fill="#83C167" font-family="Georgia,serif" font-size="14" font-style="italic">&#966;&#8322;</text>
+    <text x="338" y="316" fill="#83C167" font-family="Georgia,serif" font-size="14" font-style="italic">&#966;&#8323;</text>
+    <text x="252" y="318" fill="#83C167" font-family="Georgia,serif" font-size="14" font-style="italic">&#966;&#8324;</text>
+    <text x="222" y="236" fill="#83C167" font-family="Georgia,serif" font-size="14" font-style="italic">&#966;&#8325;</text>
+    <text x="232" y="160" fill="#FC6255" font-family="Georgia,serif" font-size="13" font-style="italic">missing wedge</text>
+
+    <!-- apex vertex marker + label -->
+    <circle cx="300" cy="250" r="4.5" fill="#FFD54A"/>
+    <text x="300" y="278" fill="#58C4DD" font-family="Georgia,serif" font-size="15" font-style="italic" text-anchor="middle">i</text>
+
+    <!-- one edge vector highlighted (yellow) -->
+    <line x1="300" y1="250" x2="470" y2="300" stroke="#FFD54A" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="430" y="288" fill="#FFD54A" font-family="Georgia,serif" font-size="13" font-style="italic">e_ij</text>
+  </g>
+
+  <!-- given scaffold relation -->
+  <g>
+    <rect x="500" y="120" width="196" height="92" rx="8" fill="#0d1626" stroke="#26324d" stroke-width="1.2"/>
+    <text x="516" y="146" fill="#9CE8D6" font-family="Georgia,serif" font-size="13">given (flat case = full turn):</text>
+    <text x="516" y="176" fill="#e7edf7" font-family="Georgia,serif" font-size="16" font-style="italic">&#8721; &#966;&#7522;&#7503;&#7503; &#8804; 2&#960;</text>
+    <text x="516" y="200" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">shortfall = concentrated K</text>
+  </g>
+
+  <text x="24" y="436" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">The shortfall of the tip angles below 2&#960; is the integrated Gaussian curvature K&#7522;. Derive it.</text>
+</svg>

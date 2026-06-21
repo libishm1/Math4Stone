@@ -1,0 +1,62 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">CADFit IoU setup: target solid versus candidate program</title>
+  <desc id="d">Target L-bracket M overlaid with the executed candidate box S; shared, excess and missing volumes are the given quantities from which volumetric IoU is constructed.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#9aa6bd"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="40" fill="#58C4DD" font-family="Georgia,'Times New Roman',serif" font-size="22">CADFit: build the volumetric overlap, then the score</text>
+  <text x="24" y="62" fill="#9aa6bd" font-family="Georgia,serif" font-size="13" font-style="italic">Executed program Solid(&#928;) is overlaid on target &#8499;; the shared, excess and missing volumes are all you need.</text>
+
+  <!-- Candidate solid S1: the 2x2x1 box (full square footprint) -->
+  <rect x="150" y="150" width="240" height="240" fill="#FFD54A" fill-opacity="0.10" stroke="#FFD54A" stroke-width="2"/>
+  <text x="158" y="172" fill="#FFD54A" font-family="Georgia,serif" font-size="14">S = Solid(&#928;)</text>
+  <text x="158" y="190" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">candidate box, Vol(S)=4</text>
+
+  <!-- Target M: L-bracket = box minus top-right corner cube (1x1x1) -->
+  <path d="M150 150 H270 V270 H390 V390 H150 Z" fill="#58C4DD" fill-opacity="0.16" stroke="#58C4DD" stroke-width="2.5"/>
+  <text x="200" y="360" fill="#58C4DD" font-family="Georgia,serif" font-size="15">target &#8499;</text>
+  <text x="200" y="378" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">Vol(&#8499;)=3</text>
+
+  <!-- Shared region label A intersection B -->
+  <text x="190" y="240" fill="#83C167" font-family="Georgia,serif" font-size="15">S &#8745; &#8499;</text>
+  <text x="190" y="258" fill="#83C167" font-family="Georgia,serif" font-size="12">shared = 3</text>
+
+  <!-- Excess region R- : the corner the box has but M lacks -->
+  <rect x="270" y="150" width="120" height="120" fill="#FC6255" fill-opacity="0.22" stroke="#FC6255" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="300" y="205" fill="#FC6255" font-family="Georgia,serif" font-size="14" text-anchor="middle">R&#8315;=S&#92;&#8499;</text>
+  <text x="300" y="223" fill="#FC6255" font-family="Georgia,serif" font-size="12" text-anchor="middle">excess = 1</text>
+
+  <!-- Missing region note R+ empty here -->
+  <text x="470" y="300" fill="#9CE8D6" font-family="Georgia,serif" font-size="13">R&#8314; = &#8499;&#92;S = &#8709;</text>
+  <text x="470" y="318" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">missing = 0</text>
+
+  <!-- dimension arrows for the 2x2 footprint -->
+  <line x1="150" y1="410" x2="390" y2="410" stroke="#9aa6bd" stroke-width="1.2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="270" y="428" fill="#9aa6bd" font-family="Georgia,serif" font-size="12" text-anchor="middle">side s = 2</text>
+  <line x1="125" y1="150" x2="125" y2="390" stroke="#9aa6bd" stroke-width="1.2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="118" y="274" fill="#9aa6bd" font-family="Georgia,serif" font-size="12" text-anchor="end">2</text>
+
+  <!-- Given scaffold relation: union = shared + excess + missing -->
+  <rect x="468" y="360" width="234" height="74" rx="6" fill="#11161d" stroke="#26324d" stroke-width="1"/>
+  <text x="478" y="382" fill="#9CE8D6" font-family="Georgia,serif" font-size="12.5">given (partition of the union):</text>
+  <text x="478" y="406" fill="#e8edf4" font-family="Georgia,serif" font-size="15">Vol(S&#8746;&#8499;) = (S&#8745;&#8499;) + R&#8315; + R&#8314;</text>
+  <text x="478" y="426" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">= 3 + 1 + 0 = 4</text>
+
+  <!-- legend -->
+  <text x="470" y="150" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">legend</text>
+  <rect x="470" y="160" width="14" height="10" fill="#58C4DD" fill-opacity="0.16" stroke="#58C4DD"/>
+  <text x="490" y="169" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">target &#8499;</text>
+  <rect x="470" y="178" width="14" height="10" fill="#FFD54A" fill-opacity="0.10" stroke="#FFD54A"/>
+  <text x="490" y="187" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">candidate S</text>
+  <rect x="470" y="196" width="14" height="10" fill="#FC6255" fill-opacity="0.22" stroke="#FC6255" stroke-dasharray="3 2"/>
+  <text x="490" y="205" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">excess R&#8315;</text>
+</svg>

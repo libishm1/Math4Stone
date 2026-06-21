@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="A matrix as a linear transformation: the unit square and basis vectors map to a parallelogram whose edges are the matrix columns">
+  <defs>
+    <pattern id="g2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#222c44" stroke-width="1"/></pattern>
+    <marker id="g2g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#83C167"/></marker>
+    <marker id="g2r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FC6255"/></marker>
+  </defs>
+  <rect width="720" height="440" fill="#0e1116"/>
+  <rect width="720" height="440" fill="url(#g2)" opacity="0.45"/>
+  <line x1="20" y1="300" x2="700" y2="300" stroke="#54648a" stroke-width="1.5"/>
+  <line x1="200" y1="20" x2="200" y2="420" stroke="#54648a" stroke-width="1.5"/>
+
+  <!-- transformed unit cell (parallelogram) -->
+  <polygon points="200,300 290,276 332,198 242,222" fill="#58C4DD" opacity="0.18"/>
+
+  <!-- transformed basis = columns of M -->
+  <line x1="200" y1="300" x2="284" y2="278" stroke="#83C167" stroke-width="4.5" marker-end="url(#g2g)"/>
+  <line x1="200" y1="300" x2="244" y2="227" stroke="#FC6255" stroke-width="4.5" marker-end="url(#g2r)"/>
+  <circle cx="200" cy="300" r="4" fill="#cdd6e6"/>
+
+  <text x="296" y="276" fill="#83C167" font-family="Georgia, serif" font-style="italic" font-size="18">î &#8242; = (1.5, 0.4)</text>
+  <text x="250" y="216" fill="#FC6255" font-family="Georgia, serif" font-style="italic" font-size="18">ĵ &#8242; = (0.7, 1.3)</text>
+
+  <text x="430" y="250" fill="#E8E8E8" font-family="Georgia, serif" font-size="20">M = [ î&#8242;  ĵ&#8242; ]</text>
+  <text x="430" y="280" fill="#9aa6bd" font-family="Georgia, serif" font-size="15">columns = where the basis lands</text>
+
+  <text x="36" y="56" fill="#58C4DD" font-family="Georgia, serif" font-size="22">A matrix is a linear transformation</text>
+  <text x="36" y="82" fill="#6f7d97" font-family="Georgia, serif" font-size="16">it sends grid lines to grid lines, origin fixed</text>
+</svg>

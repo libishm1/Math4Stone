@@ -1,0 +1,69 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Supervised learning as optimization: gradient-descent step on the empirical-risk surface</title>
+  <desc>A loss surface J(theta) shown as nested contours with a current parameter point, its gradient, the negative-gradient descent step, and the regularizer pull toward the origin. The final update equation is left for the learner to derive.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="yel" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0 0L7 3.2L0 6.4Z" fill="#FFD54A"/>
+    </marker>
+    <marker id="grn" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0 0L7 3.2L0 6.4Z" fill="#83C167"/>
+    </marker>
+    <marker id="red" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0 0L7 3.2L0 6.4Z" fill="#FC6255"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia, 'Times New Roman', serif" font-size="20">Supervised learning = descent on the risk surface</text>
+  <text x="24" y="54" fill="#9aa6bd" font-family="Georgia, serif" font-size="12.5">Given the loss landscape, its slope, and the regularizer pull — construct the parameter update.</text>
+
+  <!-- parameter axes -->
+  <line x1="90" y1="420" x2="560" y2="420" stroke="#9aa6bd" stroke-width="1.5"/>
+  <line x1="90" y1="420" x2="90" y2="90" stroke="#9aa6bd" stroke-width="1.5"/>
+  <text x="566" y="424" fill="#9aa6bd" font-family="Georgia, serif" font-size="13" font-style="italic">&#952;&#8321;</text>
+  <text x="78" y="84" fill="#9aa6bd" font-family="Georgia, serif" font-size="13" font-style="italic">&#952;&#8322;</text>
+
+  <!-- loss-surface contours (concentric ellipses around the minimum) -->
+  <g fill="none" stroke="#9CE8D6" stroke-opacity="0.55">
+    <ellipse cx="300" cy="270" rx="180" ry="120" stroke-width="1.2"/>
+    <ellipse cx="300" cy="270" rx="138" ry="92" stroke-width="1.2"/>
+    <ellipse cx="300" cy="270" rx="96" ry="64" stroke-width="1.2"/>
+    <ellipse cx="300" cy="270" rx="54" ry="36" stroke-width="1.2"/>
+    <ellipse cx="300" cy="270" rx="20" ry="13" stroke-width="1.2"/>
+  </g>
+  <circle cx="300" cy="270" r="3.5" fill="#9CE8D6"/>
+  <text x="308" y="266" fill="#9CE8D6" font-family="Georgia, serif" font-size="12" font-style="italic">min J(&#952;)</text>
+  <text x="360" y="372" fill="#9CE8D6" font-family="Georgia, serif" font-size="11.5" fill-opacity="0.8">contours of J(&#952;)</text>
+
+  <!-- current parameter point -->
+  <circle cx="468" cy="168" r="4.5" fill="#58C4DD"/>
+  <text x="476" y="160" fill="#58C4DD" font-family="Georgia, serif" font-size="13" font-style="italic">&#952; (now)</text>
+
+  <!-- gradient vector (points uphill, away from min) -->
+  <line x1="468" y1="168" x2="540" y2="120" stroke="#FFD54A" stroke-width="2.4" marker-end="url(#yel)"/>
+  <text x="544" y="116" fill="#FFD54A" font-family="Georgia, serif" font-size="13">&#8711;J</text>
+  <text x="512" y="146" fill="#FFD54A" font-family="Georgia, serif" font-size="10.5" fill-opacity="0.85">uphill slope</text>
+
+  <!-- descent step: -eta * grad (toward the basin) -->
+  <line x1="468" y1="168" x2="396" y2="216" stroke="#83C167" stroke-width="2.6" marker-end="url(#grn)"/>
+  <text x="372" y="232" fill="#83C167" font-family="Georgia, serif" font-size="13">&#8722;&#951;&#8711;J</text>
+  <text x="396" y="196" fill="#83C167" font-family="Georgia, serif" font-size="10.5" fill-opacity="0.85">step (size &#951;)</text>
+
+  <!-- regularizer pull toward origin -->
+  <line x1="468" y1="168" x2="426" y2="138" stroke="#FC6255" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#red)"/>
+  <text x="402" y="128" fill="#FC6255" font-family="Georgia, serif" font-size="11.5">&#8722;&#951;&#955;&#952;</text>
+  <text x="320" y="120" fill="#FC6255" font-family="Georgia, serif" font-size="10.5" fill-opacity="0.85">weight decay &#8594; 0</text>
+
+  <!-- given scaffold relation -->
+  <rect x="92" y="92" width="248" height="56" rx="6" fill="#11203a" fill-opacity="0.8" stroke="#26324d"/>
+  <text x="104" y="114" fill="#58C4DD" font-family="Georgia, serif" font-size="11.5">given:</text>
+  <text x="104" y="134" fill="#cfd8e8" font-family="Georgia, serif" font-size="13" font-style="italic">&#8711;J = (1/N)&#931;&#8711;&#8467; + &#955;&#952;</text>
+
+  <!-- objective reminder, no final update equation -->
+  <text x="92" y="446" fill="#9aa6bd" font-family="Georgia, serif" font-size="12.5" font-style="italic">J(&#952;) = (1/N) &#931;&#7522; &#8467;(f&#952;(x&#7522;), y&#7522;) + &#955; R(&#952;)   &#8212;   move &#952; opposite the slope, scaled by &#951;.</text>
+</svg>

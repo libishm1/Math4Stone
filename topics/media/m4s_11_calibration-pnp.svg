@@ -1,0 +1,70 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Pinhole projection setup for calibration and PnP</title>
+  <desc id="d">A 3D world point, the camera center, the normalized z=1 plane, and the sensor, with the given focal length and principal point.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#58C4DD"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="20" y="34" fill="#58C4DD" font-family="Georgia, serif" font-size="21">Pinhole projection: world point to sensor</text>
+  <text x="20" y="54" fill="#9aa6bd" font-family="Georgia, serif" font-size="13">Given f and (cx, cy); construct the pixel a 3D point lands on.</text>
+
+  <!-- optical axis (+Z forward) -->
+  <line x1="120" y1="300" x2="690" y2="300" stroke="#9aa6bd" stroke-width="1.3" stroke-dasharray="5 5" marker-end="url(#ar)"/>
+  <text x="660" y="292" fill="#9aa6bd" font-family="monospace" font-size="13">+Z</text>
+
+  <!-- camera center C -->
+  <circle cx="120" cy="300" r="6" fill="#FC6255"/>
+  <text x="86" y="332" fill="#FC6255" font-family="monospace" font-size="13">C (center)</text>
+
+  <!-- camera axes -->
+  <line x1="120" y1="300" x2="120" y2="222" stroke="#9aa6bd" stroke-width="1" marker-end="url(#arb)" opacity="0.7"/>
+  <text x="126" y="226" fill="#9aa6bd" font-family="monospace" font-size="12">+Y down</text>
+
+  <!-- normalized plane z=1 -->
+  <line x1="300" y1="190" x2="300" y2="410" stroke="#83C167" stroke-width="2"/>
+  <text x="246" y="182" fill="#83C167" font-family="monospace" font-size="13">z = 1 plane</text>
+  <text x="252" y="426" fill="#83C167" font-family="monospace" font-size="12">(x', y')</text>
+
+  <!-- sensor / image plane -->
+  <line x1="470" y1="160" x2="470" y2="440" stroke="#58C4DD" stroke-width="2.5"/>
+  <text x="430" y="152" fill="#58C4DD" font-family="monospace" font-size="13">sensor (u, v)</text>
+
+  <!-- principal point on sensor -->
+  <circle cx="470" cy="300" r="4" fill="#9CE8D6"/>
+  <text x="478" y="296" fill="#9CE8D6" font-family="monospace" font-size="12">(cx, cy)</text>
+
+  <!-- focal length bracket: C to sensor along axis = f (in pixels) -->
+  <line x1="120" y1="346" x2="470" y2="346" stroke="#9aa6bd" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="120" y1="340" x2="120" y2="352" stroke="#9aa6bd" stroke-width="1"/>
+  <line x1="470" y1="340" x2="470" y2="352" stroke="#9aa6bd" stroke-width="1"/>
+  <text x="280" y="364" fill="#FFD54A" font-family="monospace" font-size="13">f (focal, px) given</text>
+
+  <!-- world point X -->
+  <circle cx="612" cy="150" r="6" fill="#FFD54A"/>
+  <text x="580" y="138" fill="#FFD54A" font-family="monospace" font-size="13">X = (X', Y', Z')</text>
+  <text x="556" y="120" fill="#9aa6bd" font-family="monospace" font-size="11">camera frame: X_c = R X_w + t</text>
+
+  <!-- projection ray from C through normalized plane, sensor, to X -->
+  <line x1="120" y1="300" x2="612" y2="150" stroke="#FFD54A" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- intersection on z=1 plane -->
+  <circle cx="300" cy="254" r="4.5" fill="#83C167"/>
+  <!-- intersection (pixel) on sensor -->
+  <circle cx="470" cy="208" r="4.5" fill="#58C4DD"/>
+  <text x="478" y="206" fill="#58C4DD" font-family="monospace" font-size="12">(u, v)</text>
+
+  <!-- given scaffold relation -->
+  <rect x="20" y="406" width="276" height="38" rx="5" fill="#0e1116" stroke="#26324d" stroke-width="1"/>
+  <text x="32" y="423" fill="#9CE8D6" font-family="monospace" font-size="12">given: x' = X'/Z',  y' = Y'/Z'</text>
+  <text x="32" y="439" fill="#9aa6bd" font-family="monospace" font-size="11">(similar triangles on the z=1 plane)</text>
+</svg>

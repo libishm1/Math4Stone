@@ -1,0 +1,58 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl cap">
+  <title id="ttl">Linearization: the Jacobian is the local tangent slope</title>
+  <desc id="cap">A curved residual map r(x) and its tangent at x0; the slope is the Jacobian J.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0 0L7 3.2L0 6.4Z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arb" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0 0L7 3.2L0 6.4Z" fill="#58C4DD"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="20">Linearization: slope of the curved map is the Jacobian</text>
+  <text x="24" y="56" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">given f(x0) and the tangent slope J at x0, a small step Δx predicts the next value</text>
+
+  <!-- axes -->
+  <line x1="80" y1="410" x2="660" y2="410" stroke="#9aa6bd" stroke-width="1.5" marker-end="url(#arb)"/>
+  <line x1="80" y1="410" x2="80" y2="90" stroke="#9aa6bd" stroke-width="1.5" marker-end="url(#arb)"/>
+  <text x="650" y="432" fill="#58C4DD" font-family="Georgia,serif" font-size="14">x (input)</text>
+  <text x="52" y="100" fill="#58C4DD" font-family="Georgia,serif" font-size="14">f</text>
+
+  <!-- curved map f(x) -->
+  <path d="M100 380 Q230 360 300 250 T520 130 Q580 105 620 120" fill="none" stroke="#9CE8D6" stroke-width="2.5"/>
+  <text x="600" y="150" fill="#9CE8D6" font-family="Georgia,serif" font-size="14">f(x)</text>
+
+  <!-- tangent line at x0 (the linearization), drawn through (x0,f0) with slope J -->
+  <line x1="250" y1="365" x2="500" y2="195" stroke="#FC6255" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="430" y="210" fill="#FC6255" font-family="Georgia,serif" font-size="13">tangent  (slope = J)</text>
+
+  <!-- x0 marker -->
+  <line x1="330" y1="410" x2="330" y2="311" stroke="#9aa6bd" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="330" cy="311" r="5" fill="#FFD54A"/>
+  <text x="316" y="430" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">x0</text>
+  <text x="236" y="306" fill="#FFD54A" font-family="Georgia,serif" font-size="13">f(x0)  given</text>
+
+  <!-- step Delta x to x0 + dx -->
+  <line x1="330" y1="410" x2="450" y2="410" stroke="#FFD54A" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="368" y="404" fill="#FFD54A" font-family="Georgia,serif" font-size="13">Δx</text>
+  <line x1="450" y1="410" x2="450" y2="240" stroke="#9aa6bd" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="440" y="430" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">x0+Δx</text>
+
+  <!-- predicted vs true gap -->
+  <circle cx="450" cy="243" r="4.5" fill="#FC6255"/>
+  <circle cx="450" cy="208" r="4.5" fill="#9CE8D6"/>
+  <line x1="462" y1="243" x2="462" y2="208" stroke="#83C167" stroke-width="2"/>
+  <text x="470" y="232" fill="#83C167" font-family="Georgia,serif" font-size="12">O(Δx²) error</text>
+
+  <!-- slope triangle showing rise/run = J -->
+  <line x1="330" y1="311" x2="410" y2="311" stroke="#58C4DD" stroke-width="1.4"/>
+  <line x1="410" y1="311" x2="410" y2="257" stroke="#58C4DD" stroke-width="1.4"/>
+  <text x="352" y="328" fill="#58C4DD" font-family="Georgia,serif" font-size="12">1</text>
+  <text x="416" y="290" fill="#58C4DD" font-family="Georgia,serif" font-size="12">J</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="A vector shown on a coordinate grid with its components and the basis vectors i-hat and j-hat">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah-y" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FFD54A"/></marker>
+    <marker id="ah-g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#83C167"/></marker>
+    <marker id="ah-r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FC6255"/></marker>
+  </defs>
+
+  <rect width="720" height="440" fill="#0e1116"/>
+  <rect width="720" height="440" fill="url(#grid)" opacity="0.55"/>
+
+  <!-- axes -->
+  <line x1="20" y1="280" x2="704" y2="280" stroke="#54648a" stroke-width="1.5"/>
+  <line x1="200" y1="20" x2="200" y2="424" stroke="#54648a" stroke-width="1.5"/>
+
+  <!-- component guides -->
+  <line x1="360" y1="160" x2="360" y2="280" stroke="#FFD54A" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6"/>
+  <line x1="360" y1="160" x2="200" y2="160" stroke="#FFD54A" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6"/>
+
+  <!-- basis vectors -->
+  <line x1="200" y1="280" x2="238" y2="280" stroke="#83C167" stroke-width="4" marker-end="url(#ah-g)"/>
+  <line x1="200" y1="280" x2="200" y2="242" stroke="#FC6255" stroke-width="4" marker-end="url(#ah-r)"/>
+
+  <!-- the vector -->
+  <line x1="200" y1="280" x2="354" y2="166" stroke="#FFD54A" stroke-width="4.5" marker-end="url(#ah-y)"/>
+  <circle cx="200" cy="280" r="4" fill="#cdd6e6"/>
+
+  <!-- labels -->
+  <text x="372" y="150" fill="#FFD54A" font-family="Georgia, serif" font-style="italic" font-size="26">v</text>
+  <text x="372" y="172" fill="#9aa6bd" font-family="Georgia, serif" font-size="16">= (4, 3)</text>
+  <text x="244" y="304" fill="#83C167" font-family="Georgia, serif" font-style="italic" font-size="20">î</text>
+  <text x="170" y="240" fill="#FC6255" font-family="Georgia, serif" font-style="italic" font-size="20">ĵ</text>
+  <text x="372" y="262" fill="#9aa6bd" font-family="Georgia, serif" font-size="15">4 î</text>
+  <text x="150" y="226" fill="#9aa6bd" font-family="Georgia, serif" font-size="15">3 ĵ</text>
+
+  <text x="36" y="56" fill="#58C4DD" font-family="Georgia, serif" font-size="22">A vector is an arrow from the origin</text>
+  <text x="36" y="82" fill="#6f7d97" font-family="Georgia, serif" font-size="16">v = 4 î + 3 ĵ — a recipe in the basis</text>
+</svg>

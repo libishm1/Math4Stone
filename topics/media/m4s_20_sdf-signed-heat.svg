@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl cap">
+  <title id="ttl">Signed Heat: the 1D construction of an SDF</title>
+  <desc id="cap">Oriented source at x=2; unit direction field X away from it; divergence is the Poisson source.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#9CE8D6"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="28" y="40" fill="#58C4DD" font-family="Georgia,serif" font-size="21">Constructing a signed distance field in 1D</text>
+  <text x="28" y="62" fill="#9aa6bd" font-family="Georgia,serif" font-size="13" font-style="italic">Given an oriented source, the unit field X and its divergence are the Poisson source. The slope you derive is the SDF.</text>
+
+  <!-- number line -->
+  <line x1="80" y1="200" x2="640" y2="200" stroke="#9aa6bd" stroke-width="2"/>
+  <g font-family="monospace" font-size="13" fill="#9aa6bd" text-anchor="middle">
+    <line x1="120" y1="195" x2="120" y2="205" stroke="#9aa6bd" stroke-width="2"/><text x="120" y="224">0</text>
+    <line x1="240" y1="195" x2="240" y2="205" stroke="#9aa6bd" stroke-width="2"/><text x="240" y="224">1</text>
+    <line x1="360" y1="195" x2="360" y2="205" stroke="#9aa6bd" stroke-width="2"/><text x="360" y="224">2</text>
+    <line x1="480" y1="195" x2="480" y2="205" stroke="#9aa6bd" stroke-width="2"/><text x="480" y="224">3</text>
+    <line x1="600" y1="195" x2="600" y2="205" stroke="#9aa6bd" stroke-width="2"/><text x="600" y="224">4</text>
+  </g>
+  <text x="648" y="204" fill="#9aa6bd" font-family="monospace" font-size="13">x</text>
+
+  <!-- inside / outside shading labels -->
+  <text x="180" y="170" fill="#FC6255" font-family="Georgia,serif" font-size="14" text-anchor="middle">inside  phi &lt; 0</text>
+  <text x="540" y="170" fill="#83C167" font-family="Georgia,serif" font-size="14" text-anchor="middle">outside  phi &gt; 0</text>
+
+  <!-- oriented source at x=2 -->
+  <circle cx="360" cy="200" r="6" fill="#58C4DD"/>
+  <line x1="360" y1="200" x2="408" y2="200" stroke="#9CE8D6" stroke-width="2.5" marker-end="url(#arT)"/>
+  <text x="360" y="258" fill="#58C4DD" font-family="monospace" font-size="13" text-anchor="middle">source x=2</text>
+  <text x="384" y="190" fill="#9CE8D6" font-family="Georgia,serif" font-size="12" text-anchor="middle">normal n (+x)</text>
+
+  <!-- unit direction field X arrows: -1 left, +1 right -->
+  <g stroke="#FFD54A" stroke-width="2.5">
+    <line x1="148" y1="200" x2="92" y2="200" marker-end="url(#ar)"/>
+    <line x1="268" y1="200" x2="212" y2="200" marker-end="url(#ar)"/>
+    <line x1="452" y1="200" x2="508" y2="200" marker-end="url(#ar)"/>
+    <line x1="572" y1="200" x2="628" y2="200" marker-end="url(#ar)"/>
+  </g>
+  <text x="120" y="290" fill="#FFD54A" font-family="monospace" font-size="13" text-anchor="middle">X=-1</text>
+  <text x="240" y="290" fill="#FFD54A" font-family="monospace" font-size="13" text-anchor="middle">X=-1</text>
+  <text x="360" y="290" fill="#FFD54A" font-family="monospace" font-size="13" text-anchor="middle">X=0</text>
+  <text x="480" y="290" fill="#FFD54A" font-family="monospace" font-size="13" text-anchor="middle">X=+1</text>
+  <text x="600" y="290" fill="#FFD54A" font-family="monospace" font-size="13" text-anchor="middle">X=+1</text>
+  <text x="80" y="318" fill="#FFD54A" font-family="Georgia,serif" font-size="13" font-style="italic">unit direction field X = Y_t / |Y_t|  (given)</text>
+
+  <!-- divergence row (the Poisson source) -->
+  <text x="80" y="358" fill="#83C167" font-family="Georgia,serif" font-size="13">div X  (central diff, h=1):</text>
+  <g font-family="monospace" font-size="13" fill="#83C167" text-anchor="middle">
+    <text x="240" y="358">0.5</text>
+    <text x="360" y="358">1.0</text>
+    <text x="480" y="358">0.5</text>
+  </g>
+  <text x="80" y="392" fill="#9aa6bd" font-family="Georgia,serif" font-size="13" font-style="italic">given scaffold:  (div X)_i = (X_{i+1} - X_{i-1}) / 2</text>
+
+  <!-- the unknown to derive -->
+  <text x="80" y="430" fill="#58C4DD" font-family="Georgia,serif" font-size="14">Solve  L phi = div X  with phi(2)=0  =&gt;  derive the slope of phi   (the SDF)</text>
+</svg>

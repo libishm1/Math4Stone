@@ -1,0 +1,73 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">RANSAC minimal sample and consensus</title>
+  <desc id="d">A scatter of inliers on a line plus outliers; a minimal sample of s points defines a model, and a band of half-width t collects the consensus set, with the iteration-count givens labelled.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="21">Robust estimation and RANSAC</text>
+  <text x="24" y="56" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">A minimal sample of s points proposes a model; points within ±t form the consensus set.</text>
+
+  <!-- consensus band -->
+  <polygon points="70,330 560,140 560,176 70,366" fill="#83C167" opacity="0.12"/>
+  <line x1="70" y1="348" x2="560" y2="158" stroke="#83C167" stroke-width="2"/>
+  <line x1="70" y1="330" x2="560" y2="140" stroke="#83C167" stroke-width="1" stroke-dasharray="5 4" opacity="0.7"/>
+  <line x1="70" y1="366" x2="560" y2="176" stroke="#83C167" stroke-width="1" stroke-dasharray="5 4" opacity="0.7"/>
+
+  <!-- band half-width t arrow -->
+  <line x1="470" y1="219" x2="470" y2="183" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="478" y="206" fill="#FFD54A" font-family="Georgia,serif" font-size="14" font-style="italic">t</text>
+  <text x="478" y="222" fill="#9aa6bd" font-family="Georgia,serif" font-size="10">threshold</text>
+
+  <!-- inliers (green) -->
+  <circle cx="110" cy="345" r="4.5" fill="#83C167"/>
+  <circle cx="175" cy="318" r="4.5" fill="#83C167"/>
+  <circle cx="232" cy="305" r="4.5" fill="#83C167"/>
+  <circle cx="300" cy="278" r="4.5" fill="#83C167"/>
+  <circle cx="355" cy="258" r="4.5" fill="#83C167"/>
+  <circle cx="430" cy="222" r="4.5" fill="#83C167"/>
+  <circle cx="500" cy="190" r="4.5" fill="#83C167"/>
+
+  <!-- minimal sample s=2 (teal ringed) -->
+  <circle cx="175" cy="318" r="8" fill="none" stroke="#9CE8D6" stroke-width="2"/>
+  <circle cx="430" cy="222" r="8" fill="none" stroke="#9CE8D6" stroke-width="2"/>
+  <text x="150" y="300" fill="#9CE8D6" font-family="Georgia,serif" font-size="12">minimal sample s</text>
+
+  <!-- outliers (red) -->
+  <circle cx="260" cy="120" r="4.5" fill="#FC6255"/>
+  <circle cx="380" cy="380" r="4.5" fill="#FC6255"/>
+  <circle cx="150" cy="180" r="4.5" fill="#FC6255"/>
+  <text x="268" y="116" fill="#FC6255" font-family="Georgia,serif" font-size="11">outlier  |r| &gt; t</text>
+
+  <!-- residual r to one inlier -->
+  <line x1="355" y1="258" x2="355" y2="241" stroke="#58C4DD" stroke-width="1.4"/>
+  <text x="361" y="253" fill="#58C4DD" font-family="Georgia,serif" font-size="11" font-style="italic">r</text>
+
+  <!-- model label -->
+  <text x="500" y="150" fill="#83C167" font-family="Georgia,serif" font-size="12">model from s points</text>
+
+  <!-- givens box -->
+  <rect x="588" y="250" width="118" height="150" rx="6" fill="#161c26" stroke="#26324d"/>
+  <text x="598" y="270" fill="#58C4DD" font-family="Georgia,serif" font-size="12">given</text>
+  <text x="598" y="292" fill="#9aa6bd" font-family="Georgia,serif" font-size="12" font-style="italic">w</text>
+  <text x="614" y="292" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">= inlier ratio</text>
+  <text x="598" y="314" fill="#9aa6bd" font-family="Georgia,serif" font-size="12" font-style="italic">s</text>
+  <text x="614" y="314" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">= sample size</text>
+  <text x="598" y="336" fill="#9aa6bd" font-family="Georgia,serif" font-size="12" font-style="italic">p</text>
+  <text x="614" y="336" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">= confidence</text>
+  <text x="598" y="362" fill="#9CE8D6" font-family="Georgia,serif" font-size="11">P(clean)</text>
+  <text x="598" y="380" fill="#9CE8D6" font-family="Georgia,serif" font-size="13" font-style="italic">= w</text>
+  <text x="632" y="375" fill="#9CE8D6" font-family="Georgia,serif" font-size="10" font-style="italic">s</text>
+  <text x="598" y="396" fill="#9aa6bd" font-family="Georgia,serif" font-size="9">scaffold</text>
+
+  <!-- axes hint -->
+  <line x1="70" y1="410" x2="560" y2="410" stroke="#9aa6bd" stroke-width="1" opacity="0.4"/>
+  <line x1="70" y1="410" x2="70" y2="120" stroke="#9aa6bd" stroke-width="1" opacity="0.4"/>
+</svg>
