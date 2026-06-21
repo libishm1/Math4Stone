@@ -1,0 +1,63 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ti de">
+  <title id="ti">Computed-torque control: setup</title>
+  <desc id="de">A 2-link arm under gravity with a target pose, joint angles, and the given equation-of-motion scaffold from which the control torque is derived.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#FFD54A"/>
+    </marker>
+    <marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#FC6255"/>
+    </marker>
+    <marker id="at" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#83C167"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="38" fill="#58C4DD" font-family="Georgia,serif" font-size="22">Dynamics &amp; control — the torque to track a pose</text>
+  <text x="24" y="60" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">Given the arm's mass, Coriolis and gravity terms and the pose error, build the joint torque.</text>
+
+  <!-- base -->
+  <rect x="150" y="370" width="90" height="20" fill="#1b2436" stroke="#34507a"/>
+  <circle cx="195" cy="370" r="6" fill="#9aa6bd"/>
+
+  <!-- current arm (solid) link1 195,370 -> 320,250 ; link2 -> 430,300 -->
+  <line x1="195" y1="370" x2="320" y2="250" stroke="#9CE8D6" stroke-width="8" stroke-linecap="round"/>
+  <line x1="320" y1="250" x2="430" y2="300" stroke="#9CE8D6" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="320" cy="250" r="6" fill="#9aa6bd"/>
+  <circle cx="430" cy="300" r="9" fill="#9CE8D6"/>
+  <text x="442" y="304" fill="#9CE8D6" font-family="Georgia,serif" font-size="13">tool q (now)</text>
+
+  <!-- target arm (dashed) -->
+  <line x1="195" y1="370" x2="335" y2="215" stroke="#58C4DD" stroke-width="3" stroke-dasharray="6 5"/>
+  <line x1="335" y1="215" x2="470" y2="205" stroke="#58C4DD" stroke-width="3" stroke-dasharray="6 5"/>
+  <circle cx="470" cy="205" r="7" fill="none" stroke="#58C4DD" stroke-width="2"/>
+  <text x="480" y="200" fill="#58C4DD" font-family="Georgia,serif" font-size="13">q_d (target)</text>
+
+  <!-- joint angle q1 arc -->
+  <path d="M225 370 A30 30 0 0 0 219 345" fill="none" stroke="#FFD54A" stroke-width="2"/>
+  <text x="232" y="352" fill="#FFD54A" font-family="Georgia,serif" font-size="13">q1</text>
+
+  <!-- error vector (green) from current tool to target -->
+  <line x1="430" y1="300" x2="470" y2="205" stroke="#83C167" stroke-width="2.5" marker-end="url(#at)"/>
+  <text x="500" y="250" fill="#83C167" font-family="Georgia,serif" font-size="13">e = q_d - q</text>
+
+  <!-- gravity vector (red) at tool -->
+  <line x1="430" y1="300" x2="430" y2="360" stroke="#FC6255" stroke-width="2.5" marker-end="url(#ag)"/>
+  <text x="438" y="350" fill="#FC6255" font-family="Georgia,serif" font-size="13">g(q)</text>
+
+  <!-- torque input (yellow) at base joint -->
+  <path d="M168 392 A24 24 0 1 1 165 350" fill="none" stroke="#FFD54A" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="118" y="345" fill="#FFD54A" font-family="Georgia,serif" font-size="13">tau (input)</text>
+
+  <!-- given scaffold box -->
+  <rect x="470" y="330" width="232" height="96" rx="6" fill="#121a27" stroke="#34507a"/>
+  <text x="484" y="352" fill="#58C4DD" font-family="Georgia,serif" font-size="12">given (equation of motion):</text>
+  <text x="484" y="376" fill="#9CE8D6" font-family="Georgia,serif" font-size="15">M(q) q&#776;&#776; + C(q,q&#775;)q&#775; + g(q) = tau</text>
+  <text x="484" y="400" fill="#58C4DD" font-family="Georgia,serif" font-size="12">given (error):  e = q_d - q,  e&#775; = q&#775;_d - q&#775;</text>
+  <text x="484" y="418" fill="#9aa6bd" font-family="Georgia,serif" font-size="11">build tau = feedforward + feedback</text>
+</svg>

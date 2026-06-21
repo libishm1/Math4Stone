@@ -1,0 +1,63 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arrT" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#9CE8D6"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia, serif" font-size="21">Mesh topology: count V, E, F, then derive &#967;</text>
+  <text x="24" y="56" fill="#9aa6bd" font-family="Georgia, serif" font-size="13" font-style="italic">half-edge twins split each edge; the integers V&#8211;E+F fix genus and total curvature</text>
+
+  <!-- Tetrahedron net / vertices and edges -->
+  <!-- vertices -->
+  <g stroke-width="2.5" fill="none">
+    <!-- triangle faces of a tetra shown as a 3D wedge -->
+    <polygon points="180,180 380,160 300,360" stroke="#83C167" fill="#83C16722"/>
+    <polygon points="180,180 300,360 120,330" stroke="#83C167" fill="#83C16715"/>
+    <polygon points="180,180 380,160 120,330" stroke="#83C167" fill="#83C16710"/>
+  </g>
+  <!-- twin half-edge arrows on the shared edge 180,180 -> 300,360 -->
+  <line x1="186" y1="186" x2="294" y2="354" stroke="#FFD54A" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="306" y1="354" x2="198" y2="186" stroke="#9CE8D6" stroke-width="2.5" marker-end="url(#arrT)"/>
+  <text x="250" y="300" fill="#FFD54A" font-family="Georgia, serif" font-size="14" font-style="italic">h</text>
+  <text x="222" y="232" fill="#9CE8D6" font-family="Georgia, serif" font-size="14" font-style="italic">twin(h)</text>
+
+  <!-- vertex dots + labels -->
+  <g fill="#FC6255">
+    <circle cx="180" cy="180" r="5"/>
+    <circle cx="380" cy="160" r="5"/>
+    <circle cx="300" cy="360" r="5"/>
+    <circle cx="120" cy="330" r="5"/>
+  </g>
+  <g fill="#58C4DD" font-family="Georgia, serif" font-size="13">
+    <text x="164" y="174">v1</text>
+    <text x="388" y="156">v2</text>
+    <text x="306" y="378">v3</text>
+    <text x="96" y="344">v4</text>
+  </g>
+
+  <!-- angle defect callout at v1 -->
+  <path d="M180 180 m 16 0 a 16 16 0 0 1 -8 14" fill="none" stroke="#9CE8D6" stroke-width="2"/>
+  <text x="200" y="206" fill="#9CE8D6" font-family="Georgia, serif" font-size="12">&#952;</text>
+
+  <!-- given relations box -->
+  <g font-family="Georgia, serif">
+    <rect x="430" y="180" width="262" height="172" rx="8" fill="#11192b" stroke="#26324d"/>
+    <text x="446" y="206" fill="#9aa6bd" font-size="13" font-style="italic">given (counted from the mesh):</text>
+    <text x="446" y="234" fill="#FFD54A" font-size="15">V = 4    F = 4</text>
+    <text x="446" y="262" fill="#9CE8D6" font-size="15">3F = 2E   (face&#8211;edge count)</text>
+    <text x="446" y="290" fill="#83C167" font-size="15">closed, orientable, genus g</text>
+    <text x="446" y="318" fill="#58C4DD" font-size="14" font-style="italic">d&#8348; = 2&#960; &#8722; &#931; &#952; (angle defect)</text>
+    <text x="446" y="340" fill="#9aa6bd" font-size="12" font-style="italic">derive: &#967;, g, E, and &#931;d&#8348;</text>
+  </g>
+
+  <text x="24" y="430" fill="#9aa6bd" font-family="Georgia, serif" font-size="12" font-style="italic">From V, F and 3F=2E build E; then &#967;=V&#8722;E+F gives genus via &#967;=2&#8722;2g and total curvature via Gauss&#8211;Bonnet.</text>
+</svg>

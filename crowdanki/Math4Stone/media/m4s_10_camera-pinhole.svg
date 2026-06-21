@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-label="Pinhole projection: similar triangles from the camera center through the image plane to a world point">
+  <defs>
+    <pattern id="g10" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/></pattern>
+    <marker id="a10y" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFD54A"/></marker>
+    <marker id="a10t" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9CE8D6"/></marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#g10)" opacity="0.4"/>
+
+  <!-- optical axis (z, forward) -->
+  <line x1="90" y1="250" x2="660" y2="250" stroke="#9aa6bd" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="612" y="242" fill="#58C4DD" font-family="Georgia, serif" font-size="15">+z (axis)</text>
+
+  <!-- camera center -->
+  <circle cx="120" cy="250" r="5" fill="#cdd6e6"/>
+  <text x="92" y="284" fill="#9aa6bd" font-family="Georgia, serif" font-size="14">pinhole C</text>
+
+  <!-- image plane at z = 1 -->
+  <line x1="250" y1="150" x2="250" y2="350" stroke="#58C4DD" stroke-width="2.5"/>
+  <text x="206" y="142" fill="#58C4DD" font-family="Georgia, serif" font-size="14">image plane z=1</text>
+
+  <!-- ray from C through image point to world point -->
+  <line x1="120" y1="250" x2="600" y2="110" stroke="#FFD54A" stroke-width="3" marker-end="url(#a10y)"/>
+
+  <!-- world point P = (x,y,z) -->
+  <circle cx="585" cy="115" r="5" fill="#83C167"/>
+  <text x="598" y="110" fill="#83C167" font-family="Georgia, serif" font-size="15">P=(x,y,z)</text>
+
+  <!-- small triangle: height x' at z=1 -->
+  <line x1="250" y1="250" x2="250" y2="199" stroke="#9CE8D6" stroke-width="3" marker-end="url(#a10t)"/>
+  <text x="258" y="195" fill="#9CE8D6" font-family="Georgia, serif" font-size="14">x' (given, at z=1)</text>
+
+  <!-- big triangle: height x at depth z -->
+  <line x1="585" y1="250" x2="585" y2="118" stroke="#FC6255" stroke-width="3"/>
+  <text x="592" y="160" fill="#FC6255" font-family="Georgia, serif" font-size="14">x</text>
+  <!-- depth bracket z -->
+  <line x1="120" y1="300" x2="585" y2="300" stroke="#FFD54A" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="120" y1="295" x2="120" y2="305" stroke="#FFD54A" stroke-width="1.5"/>
+  <line x1="585" y1="295" x2="585" y2="305" stroke="#FFD54A" stroke-width="1.5"/>
+  <text x="345" y="318" fill="#FFD54A" font-family="Georgia, serif" font-size="15">depth z (given)</text>
+  <!-- unit depth bracket -->
+  <line x1="120" y1="362" x2="250" y2="362" stroke="#9CE8D6" stroke-width="1.5"/>
+  <text x="156" y="378" fill="#9CE8D6" font-family="Georgia, serif" font-size="13">1</text>
+
+  <!-- scaffold relation labelled given -->
+  <text x="380" y="406" fill="#6f7d97" font-family="Georgia, serif" font-size="16">given: small &#8764; big triangle, ratio x'/1 = x/z</text>
+
+  <text x="36" y="50" fill="#58C4DD" font-family="Georgia, serif" font-size="22">Pinhole projection by similar triangles</text>
+  <text x="36" y="76" fill="#6f7d97" font-family="Georgia, serif" font-size="16">one ray through C maps depth-z point to the z=1 image plane</text>
+</svg>

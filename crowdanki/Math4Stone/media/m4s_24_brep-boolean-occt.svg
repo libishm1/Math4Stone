@@ -1,0 +1,66 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl cap">
+  <title id="ttl">B-Rep face: tangents, normal, and prism sweep</title>
+  <desc id="cap">Given a fitted patch with tangents S_u, S_v and a sweep vector d; the outward normal and swept solid are derived.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="context-stroke"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="28" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="22" fill="#58C4DD">B-Rep face &#8594; outward normal &amp; prism sweep</text>
+  <text x="28" y="62" font-family="Georgia, serif" font-size="13" fill="#9aa6bd">Given a fitted patch S(u,v) and sweep vector d; derive the oriented normal and the swept solid.</text>
+
+  <!-- fitted NURBS patch (parallelogram, perspective) -->
+  <polygon points="150,250 360,210 470,260 250,305" fill="#58C4DD" fill-opacity="0.10" stroke="#9CE8D6" stroke-width="2"/>
+  <text x="160" y="290" font-family="Georgia, serif" font-size="14" fill="#9CE8D6" font-style="italic">F : face S(u,v)</text>
+
+  <!-- base point p -->
+  <circle cx="300" cy="255" r="4" fill="#FFD54A"/>
+  <text x="300" y="248" font-family="Georgia, serif" font-size="13" fill="#9aa6bd">p</text>
+
+  <!-- S_u tangent (yellow) -->
+  <line x1="300" y1="255" x2="408" y2="232" stroke="#FFD54A" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="412" y="228" font-family="Georgia, serif" font-size="15" fill="#FFD54A">S&#8336;</text>
+
+  <!-- S_v tangent (green) -->
+  <line x1="300" y1="255" x2="262" y2="300" stroke="#83C167" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="232" y="306" font-family="Georgia, serif" font-size="15" fill="#83C167">S&#7515;</text>
+
+  <!-- outward normal n = Su x Sv (teal, up) -->
+  <line x1="300" y1="255" x2="300" y2="150" stroke="#9CE8D6" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="308" y="160" font-family="Georgia, serif" font-size="15" fill="#9CE8D6">n &#8733; S&#8336;&#215;S&#7515;</text>
+  <text x="308" y="178" font-family="Georgia, serif" font-size="12" fill="#9aa6bd">flipped by &#963; = &#177;1</text>
+
+  <!-- right-angle tick at p between tangent plane and normal -->
+  <path d="M300 240 L315 240 L315 255" fill="none" stroke="#9aa6bd" stroke-width="1"/>
+
+  <!-- sweep vector d (red) -->
+  <line x1="470" y1="260" x2="520" y2="135" stroke="#FC6255" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="524" y="135" font-family="Georgia, serif" font-size="15" fill="#FC6255">d (sweep)</text>
+
+  <!-- translated copy of the face at top of prism (faint) -->
+  <polygon points="200,125 410,85 520,135 300,180" fill="#58C4DD" fill-opacity="0.06" stroke="#58C4DD" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <!-- side connectors of the prism -->
+  <line x1="150" y1="250" x2="200" y2="125" stroke="#58C4DD" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="360" y1="210" x2="410" y2="85" stroke="#58C4DD" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="250" y1="305" x2="300" y2="180" stroke="#58C4DD" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="395" y="105" font-family="Georgia, serif" font-size="12" fill="#58C4DD" fill-opacity="0.8">F + d  (s = 1)</text>
+
+  <!-- given scaffold relation box -->
+  <rect x="28" y="350" width="300" height="86" rx="6" fill="#141b27" stroke="#26324d" stroke-width="1"/>
+  <text x="42" y="372" font-family="Georgia, serif" font-size="12" fill="#58C4DD">given (scaffold)</text>
+  <text x="42" y="394" font-family="Georgia, serif" font-size="14" fill="#e6ecf5">Prism(F,d) = { p + s d : p&#8712;F, s&#8712;[0,1] }</text>
+  <text x="42" y="416" font-family="Georgia, serif" font-size="13" fill="#9aa6bd">tolerances nest: t&#7515; &#8805; t&#8337; &#8805; t&#7355;</text>
+
+  <!-- Euler counting reminder box -->
+  <rect x="360" y="350" width="332" height="86" rx="6" fill="#141b27" stroke="#26324d" stroke-width="1"/>
+  <text x="374" y="372" font-family="Georgia, serif" font-size="12" fill="#58C4DD">count the cells (cube prism)</text>
+  <text x="374" y="394" font-family="Georgia, serif" font-size="14" fill="#e6ecf5">V = 8 &#160;&#160; E = 12 &#160;&#160; F = 6</text>
+  <text x="374" y="416" font-family="Georgia, serif" font-size="13" fill="#9aa6bd">single shell S = 1, genus G = 0 &#8594; derive V&#8722;E+F</text>
+</svg>

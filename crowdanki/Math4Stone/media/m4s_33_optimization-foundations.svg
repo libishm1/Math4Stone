@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">Constrained optimum: cost gradient parallel to constraint gradient</title>
+  <desc id="d">Cost contours of f, a constraint curve g(x)=0, and the gradients of f and g aligned at the tangency point x-star.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ay" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#FFD54A"/>
+    </marker>
+    <marker id="ag" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#83C167"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="20">Constrained optimum: where the fences meet the valley</text>
+  <text x="24" y="54" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">Given: cost contours of f and the feasible curve g(x)=0. Construct the tangency condition.</text>
+
+  <!-- cost contours (nested ellipses around the unconstrained min) -->
+  <g fill="none" stroke="#9CE8D6" stroke-opacity="0.55">
+    <ellipse cx="250" cy="270" rx="40" ry="28"/>
+    <ellipse cx="250" cy="270" rx="78" ry="55"/>
+    <ellipse cx="250" cy="270" rx="118" ry="83"/>
+    <ellipse cx="250" cy="270" rx="160" ry="112"/>
+  </g>
+  <circle cx="250" cy="270" r="3.5" fill="#9CE8D6"/>
+  <text x="258" y="266" fill="#9CE8D6" font-family="Georgia,serif" font-size="13">unconstrained min of f</text>
+  <text x="150" y="200" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">contours f = const</text>
+
+  <!-- constraint curve g(x)=0 -->
+  <path d="M470 70 C 400 200, 360 300, 470 420" fill="none" stroke="#FC6255" stroke-width="2.5"/>
+  <text x="478" y="96" fill="#FC6255" font-family="Georgia,serif" font-size="14">g(x) = 0  (feasible curve)</text>
+
+  <!-- tangency point x-star where a contour touches the constraint -->
+  <circle cx="406" cy="248" r="5" fill="#FFD54A"/>
+  <text x="414" y="236" fill="#58C4DD" font-family="Georgia,serif" font-size="14">x*</text>
+
+  <!-- gradient of f (yellow), pointing outward from min, normal to the contour -->
+  <line x1="406" y1="248" x2="470" y2="226" stroke="#FFD54A" stroke-width="2.5" marker-end="url(#ay)"/>
+  <text x="474" y="220" fill="#FFD54A" font-family="Georgia,serif" font-size="13">grad f</text>
+
+  <!-- gradient of g (green), normal to the constraint, anti-parallel here -->
+  <line x1="406" y1="248" x2="348" y2="270" stroke="#83C167" stroke-width="2.5" marker-end="url(#ag)"/>
+  <text x="300" y="286" fill="#83C167" font-family="Georgia,serif" font-size="13">grad g</text>
+
+  <!-- given scaffold relation -->
+  <rect x="430" y="350" width="252" height="56" rx="6" fill="#0e1116" stroke="#26324d"/>
+  <text x="444" y="374" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">given: contour and constraint are</text>
+  <text x="444" y="394" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">tangent at x*  (same normal line)</text>
+</svg>

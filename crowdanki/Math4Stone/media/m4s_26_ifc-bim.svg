@@ -1,0 +1,65 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">IFC placement chain</title>
+  <desc id="d">A stone block's local frame composed up a site-building-storey chain to world coordinates.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#9aa6bd"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="20">IFC placement: compose the chain to world</text>
+  <text x="24" y="54" fill="#9aa6bd" font-family="Georgia,serif" font-size="12.5">given: each frame = origin t, Axis Z, RefDirection X — derive R, then T_world up the chain</text>
+
+  <!-- chain of nested frames -->
+  <g font-family="Georgia,serif" font-size="13">
+    <rect x="40" y="86" width="120" height="40" rx="5" fill="none" stroke="#9CE8D6" stroke-width="1.4"/>
+    <text x="100" y="111" fill="#9CE8D6" text-anchor="middle">T_site</text>
+    <rect x="208" y="86" width="135" height="40" rx="5" fill="none" stroke="#9CE8D6" stroke-width="1.4"/>
+    <text x="275" y="111" fill="#9CE8D6" text-anchor="middle">T_building</text>
+    <rect x="391" y="86" width="120" height="40" rx="5" fill="none" stroke="#9CE8D6" stroke-width="1.4"/>
+    <text x="451" y="111" fill="#9CE8D6" text-anchor="middle">T_storey</text>
+    <rect x="559" y="86" width="120" height="40" rx="5" fill="none" stroke="#FFD54A" stroke-width="1.4"/>
+    <text x="619" y="111" fill="#FFD54A" text-anchor="middle">T_element</text>
+    <line x1="160" y1="106" x2="206" y2="106" stroke="#9aa6bd" stroke-width="1.3" marker-end="url(#ag)"/>
+    <line x1="343" y1="106" x2="389" y2="106" stroke="#9aa6bd" stroke-width="1.3" marker-end="url(#ag)"/>
+    <line x1="511" y1="106" x2="557" y2="106" stroke="#9aa6bd" stroke-width="1.3" marker-end="url(#ag)"/>
+    <text x="360" y="146" fill="#9aa6bd" text-anchor="middle" font-size="11.5">given: relative IfcLocalPlacement, parent to child</text>
+  </g>
+
+  <!-- local frame construction -->
+  <g font-family="Georgia,serif">
+    <circle cx="180" cy="320" r="4.5" fill="#58C4DD"/>
+    <text x="150" y="318" fill="#58C4DD" font-size="13">t (origin)</text>
+    <!-- Z axis (Axis) -->
+    <line x1="180" y1="320" x2="180" y2="220" stroke="#FFD54A" stroke-width="2.4" marker-end="url(#ar)"/>
+    <text x="188" y="232" fill="#FFD54A" font-size="13">Z = Axis</text>
+    <!-- X axis (RefDirection) -->
+    <line x1="180" y1="320" x2="300" y2="320" stroke="#FFD54A" stroke-width="2.4" marker-end="url(#ar)"/>
+    <text x="246" y="340" fill="#FFD54A" font-size="13">X = RefDirection</text>
+    <!-- Y = Z x X -->
+    <line x1="180" y1="320" x2="116" y2="372" stroke="#83C167" stroke-width="2.2" marker-end="url(#ar)" marker-start="url(#ar)" opacity="0.9"/>
+    <line x1="180" y1="320" x2="116" y2="372" stroke="#83C167" stroke-width="2.2" marker-end="url(#ar)"/>
+    <text x="40" y="388" fill="#83C167" font-size="13">Y = Z &#215; X</text>
+    <text x="150" y="430" fill="#9aa6bd" font-size="11.5">given: Z and X orthonormal, R = [X Y Z]</text>
+  </g>
+
+  <!-- block + world point -->
+  <g font-family="Georgia,serif">
+    <rect x="470" y="270" width="90" height="70" rx="3" fill="none" stroke="#FC6255" stroke-width="1.6"/>
+    <text x="515" y="262" fill="#FC6255" font-size="12.5" text-anchor="middle">stone block</text>
+    <circle cx="488" cy="320" r="4" fill="#FC6255"/>
+    <text x="430" y="324" fill="#FC6255" font-size="12">p_local</text>
+    <line x1="488" y1="320" x2="620" y2="392" stroke="#FFD54A" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+    <circle cx="620" cy="392" r="4.5" fill="#58C4DD"/>
+    <text x="560" y="410" fill="#58C4DD" font-size="12">p_world (metres)</text>
+    <text x="470" y="430" fill="#9aa6bd" font-size="11.5">given: scale s = unit&#8594;metre (mm: s = 1/1000)</text>
+  </g>
+</svg>

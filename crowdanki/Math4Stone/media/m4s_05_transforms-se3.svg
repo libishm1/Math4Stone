@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="A rigid transform takes one coordinate frame to another by a rotation R and a translation t">
+  <defs>
+    <pattern id="g5" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#222c44" stroke-width="1"/></pattern>
+    <marker id="g5g" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#83C167"/></marker>
+    <marker id="g5r" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FC6255"/></marker>
+    <marker id="g5y" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFD54A"/></marker>
+  </defs>
+  <rect width="720" height="440" fill="#0e1116"/>
+  <rect width="720" height="440" fill="url(#g5)" opacity="0.4"/>
+
+  <!-- frame A (identity) -->
+  <line x1="150" y1="320" x2="240" y2="320" stroke="#83C167" stroke-width="4" marker-end="url(#g5g)"/>
+  <line x1="150" y1="320" x2="150" y2="230" stroke="#FC6255" stroke-width="4" marker-end="url(#g5r)"/>
+  <circle cx="150" cy="320" r="4" fill="#cdd6e6"/>
+  <text x="120" y="350" fill="#9aa6bd" font-family="Georgia, serif" font-size="15">frame A</text>
+
+  <!-- frame B (rotated ~ -38deg, translated) origin (470,180) -->
+  <line x1="470" y1="180" x2="541" y2="124" stroke="#83C167" stroke-width="4" marker-end="url(#g5g)"/>
+  <line x1="470" y1="180" x2="414" y2="109" stroke="#FC6255" stroke-width="4" marker-end="url(#g5r)"/>
+  <circle cx="470" cy="180" r="4" fill="#cdd6e6"/>
+  <text x="470" y="208" fill="#9aa6bd" font-family="Georgia, serif" font-size="15">frame B</text>
+
+  <!-- transform arrow -->
+  <path d="M170 305 C 300 230 360 215 452 188" fill="none" stroke="#FFD54A" stroke-width="3" stroke-dasharray="7 6" marker-end="url(#g5y)"/>
+  <text x="300" y="250" fill="#FFD54A" font-family="Georgia, serif" font-size="22">T = [ R  t ; 0  1 ]</text>
+
+  <text x="36" y="56" fill="#58C4DD" font-family="Georgia, serif" font-size="22">A rigid transform: rotate then translate</text>
+  <text x="36" y="82" fill="#6f7d97" font-family="Georgia, serif" font-size="16">one 4x4 matrix moves a whole frame in SE(3)</text>
+</svg>

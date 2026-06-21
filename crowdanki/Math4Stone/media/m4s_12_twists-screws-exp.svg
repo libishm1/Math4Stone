@@ -1,0 +1,59 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Screw axis setup: angular velocity omega about an axis through point q</title>
+  <desc>Geometric construction of the screw twist linear part from the axis point q and angular velocity omega.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="aY" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#FFD54A"/>
+    </marker>
+    <marker id="aG" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#83C167"/>
+    </marker>
+    <marker id="aR" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#FC6255"/>
+    </marker>
+    <marker id="aT" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0L9 4.5L0 9z" fill="#9CE8D6"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="38" fill="#58C4DD" font-family="Georgia, serif" font-size="22">Screw axis: angular velocity about a line through q</text>
+  <text x="24" y="60" fill="#9aa6bd" font-family="Georgia, serif" font-size="13">Given the axis point q and unit spin omega, build the twist's linear part v that rides the screw.</text>
+
+  <!-- screw axis line through q -->
+  <line x1="150" y1="380" x2="560" y2="120" stroke="#58C4DD" stroke-width="2" stroke-dasharray="2 6"/>
+  <text x="566" y="116" fill="#58C4DD" font-family="Georgia, serif" font-size="14" font-style="italic">screw axis</text>
+
+  <!-- axis point q -->
+  <circle cx="355" cy="250" r="5" fill="#9CE8D6"/>
+  <text x="364" y="246" fill="#9CE8D6" font-family="Georgia, serif" font-size="15" font-style="italic">q  (point on axis)</text>
+
+  <!-- omega: unit angular velocity along the axis -->
+  <line x1="355" y1="250" x2="475" y2="174" stroke="#FFD54A" stroke-width="3" marker-end="url(#aY)"/>
+  <text x="430" y="158" fill="#FFD54A" font-family="Georgia, serif" font-size="16" font-style="italic">&#969;,  ||&#969;||=1</text>
+
+  <!-- spin arc to suggest rotation -->
+  <path d="M300 196 A70 70 0 0 1 414 214" fill="none" stroke="#9CE8D6" stroke-width="1.6" marker-end="url(#aT)"/>
+
+  <!-- body point at the origin O -->
+  <circle cx="150" cy="380" r="5" fill="#FC6255"/>
+  <text x="120" y="404" fill="#FC6255" font-family="Georgia, serif" font-size="15" font-style="italic">O = origin</text>
+
+  <!-- r = O - q vector (from q to origin) -->
+  <line x1="355" y1="250" x2="150" y2="380" stroke="#FC6255" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#aR)"/>
+  <text x="222" y="332" fill="#FC6255" font-family="Georgia, serif" font-size="14" font-style="italic">r = O &#8722; q</text>
+
+  <!-- v: linear velocity of the origin point, perpendicular spin response -->
+  <line x1="150" y1="380" x2="244" y2="426" stroke="#83C167" stroke-width="3" marker-end="url(#aG)"/>
+  <text x="186" y="448" fill="#83C167" font-family="Georgia, serif" font-size="16" font-style="italic">v  (linear part)</text>
+
+  <!-- given scaffold relation -->
+  <rect x="430" y="350" width="266" height="70" rx="8" fill="#11161d" stroke="#26324d" stroke-width="1"/>
+  <text x="446" y="376" fill="#58C4DD" font-family="Georgia, serif" font-size="13">given (velocity of origin point):</text>
+  <text x="446" y="402" fill="#e6ebf2" font-family="Georgia, serif" font-size="17" font-style="italic">v = &#969; &#215; (O &#8722; q),   O = 0</text>
+</svg>

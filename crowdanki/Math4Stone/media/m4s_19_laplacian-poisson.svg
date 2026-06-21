@@ -1,0 +1,73 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#FFD54A"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="28" y="40" fill="#58C4DD" font-size="21" font-style="italic">Cotan Laplacian: the one-ring of vertex i</text>
+  <text x="28" y="62" fill="#9aa6bd" font-size="13">Each edge (i,j) is weighted by the two angles facing it; A_i is the dual-cell area.</text>
+
+  <!-- one-ring fan: center i with neighbours j, k, l, m, p -->
+  <!-- center i -->
+  <!-- neighbour ring positions -->
+  <!-- i = (300,250); j=(470,210); k=(430,360); l=(250,400); m=(140,290); p=(190,150) -->
+
+  <!-- dual cell (faint area A_i) around i -->
+  <polygon points="385,230 360,305 285,325 220,270 245,200" fill="#9CE8D6" opacity="0.10" stroke="#9CE8D6" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="300" y="262" fill="#9CE8D6" font-size="15" font-style="italic" text-anchor="middle">A_i</text>
+
+  <!-- spokes i to neighbours -->
+  <g stroke="#39507a" stroke-width="1.4" fill="none">
+    <line x1="300" y1="250" x2="470" y2="210"/>
+    <line x1="300" y1="250" x2="430" y2="360"/>
+    <line x1="300" y1="250" x2="250" y2="400"/>
+    <line x1="300" y1="250" x2="140" y2="290"/>
+    <line x1="300" y1="250" x2="190" y2="150"/>
+  </g>
+  <!-- outer ring edges -->
+  <g stroke="#39507a" stroke-width="1.4" fill="none">
+    <line x1="470" y1="210" x2="430" y2="360"/>
+    <line x1="430" y1="360" x2="250" y2="400"/>
+    <line x1="250" y1="400" x2="140" y2="290"/>
+    <line x1="140" y1="290" x2="190" y2="150"/>
+    <line x1="190" y1="150" x2="470" y2="210"/>
+  </g>
+
+  <!-- highlight the edge (i,j) in yellow -->
+  <line x1="300" y1="250" x2="470" y2="210" stroke="#FFD54A" stroke-width="2.6" marker-end="url(#ah)"/>
+
+  <!-- the two opposite vertices for edge (i,j): p (above) and k (below) -->
+  <!-- angle alpha at p (190,150) facing edge i-j -->
+  <path d="M214 160 A 28 28 0 0 1 224 178" fill="none" stroke="#83C167" stroke-width="2"/>
+  <text x="232" y="172" fill="#83C167" font-size="15" font-style="italic">&#945;</text>
+  <!-- angle beta at k (430,360) facing edge i-j -->
+  <path d="M408 348 A 28 28 0 0 0 420 332" fill="none" stroke="#FC6255" stroke-width="2"/>
+  <text x="392" y="338" fill="#FC6255" font-size="15" font-style="italic">&#946;</text>
+
+  <!-- vertex dots and labels -->
+  <circle cx="300" cy="250" r="5.5" fill="#FFD54A"/>
+  <text x="300" y="238" fill="#FFD54A" font-size="15" font-style="italic" text-anchor="middle">i</text>
+  <circle cx="470" cy="210" r="4.5" fill="#58C4DD"/>
+  <text x="482" y="208" fill="#58C4DD" font-size="15" font-style="italic">j</text>
+  <circle cx="190" cy="150" r="4" fill="#83C167"/>
+  <text x="176" y="144" fill="#83C167" font-size="14" font-style="italic">p</text>
+  <circle cx="430" cy="360" r="4" fill="#FC6255"/>
+  <text x="440" y="376" fill="#FC6255" font-size="14" font-style="italic">k</text>
+  <circle cx="250" cy="400" r="4" fill="#9aa6bd"/>
+  <circle cx="140" cy="290" r="4" fill="#9aa6bd"/>
+
+  <!-- given scaffold relation -->
+  <rect x="486" y="392" width="216" height="52" rx="6" fill="#11192a" stroke="#26324d"/>
+  <text x="496" y="414" fill="#9aa6bd" font-size="12.5">given (cotan of an angle):</text>
+  <text x="496" y="434" fill="#9CE8D6" font-size="14" font-style="italic">cot&#952; = (u&#183;v) / |u&#215;v|</text>
+
+  <!-- label the two faces -->
+  <text x="250" y="190" fill="#9aa6bd" font-size="12">face with &#945;</text>
+  <text x="340" y="332" fill="#9aa6bd" font-size="12">face with &#946;</text>
+</svg>

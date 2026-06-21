@@ -1,0 +1,57 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FC6255"/>
+    </marker>
+    <marker id="arB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#58C4DD"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="28" y="42" fill="#58C4DD" font-family="Georgia, serif" font-size="22">Least squares = orthogonal projection onto Col(A)</text>
+  <text x="28" y="66" fill="#9aa6bd" font-size="13">Given the column space (a plane) and the data b, drop a perpendicular: the foot is A&#770;x, the leftover is the residual r.</text>
+
+  <!-- column space plane -->
+  <polygon points="120,360 470,300 620,360 270,420" fill="#58C4DD" fill-opacity="0.10" stroke="#58C4DD" stroke-opacity="0.55" stroke-width="1.5"/>
+  <text x="500" y="392" fill="#58C4DD" font-size="14" font-style="italic">Col(A) = span of columns of A</text>
+
+  <!-- origin -->
+  <circle cx="300" cy="360" r="4" fill="#9aa6bd"/>
+  <text x="276" y="380" fill="#9aa6bd" font-size="12">O</text>
+
+  <!-- basis column vectors a1, a2 spanning the plane (given) -->
+  <line x1="300" y1="360" x2="455" y2="330" stroke="#83C167" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="460" y="330" fill="#83C167" font-size="14">a&#8321; (column, given)</text>
+  <line x1="300" y1="360" x2="235" y2="402" stroke="#83C167" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="150" y="418" fill="#83C167" font-size="14">a&#8322; (column, given)</text>
+
+  <!-- data vector b (given) sticking out of plane -->
+  <line x1="300" y1="360" x2="430" y2="150" stroke="#FFD54A" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="436" y="146" fill="#FFD54A" font-size="16">b (data, given)</text>
+
+  <!-- projection point A x-hat (foot of perpendicular) -->
+  <circle cx="430" cy="320" r="4.5" fill="#9CE8D6"/>
+  <line x1="300" y1="360" x2="430" y2="320" stroke="#9CE8D6" stroke-width="2.5" marker-end="url(#arB)" stroke-dasharray="0"/>
+  <text x="438" y="338" fill="#9CE8D6" font-size="15">A x&#770; (best fit, unknown)</text>
+
+  <!-- residual r = b - A x-hat, perpendicular to plane -->
+  <line x1="430" y1="320" x2="430" y2="150" stroke="#FC6255" stroke-width="3" marker-end="url(#arR)"/>
+  <text x="448" y="240" fill="#FC6255" font-size="16">r = b &#8722; A x&#770;</text>
+
+  <!-- right-angle mark at foot -->
+  <path d="M430 338 L412 338 L412 320" fill="none" stroke="#FC6255" stroke-width="1.6"/>
+  <text x="352" y="312" fill="#FC6255" font-size="12" font-style="italic">r &#8869; plane</text>
+
+  <!-- given scaffold relation -->
+  <rect x="28" y="402" width="318" height="40" rx="6" fill="#101a2c" stroke="#26324d"/>
+  <text x="44" y="420" fill="#9aa6bd" font-size="12" font-style="italic">given (scaffold):  minimize  E(x) = || A x &#8722; b ||&#178;</text>
+  <text x="44" y="436" fill="#9aa6bd" font-size="12" font-style="italic">orthogonality:  every column of A &#8869; r</text>
+</svg>

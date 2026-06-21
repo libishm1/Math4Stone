@@ -1,0 +1,89 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">CVT seeds and the normal-lifting setup</title>
+  <desc id="d">A 1D Voronoi line with two seeds and their equidistant boundary, plus two surface points with unit normals across a crease, the givens for the CVT energy gradient and the 6D lifted distance.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#FFD54A"/>
+    </marker>
+    <marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#9CE8D6"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="21">CVT seeds &amp; the normal-lifting setup</text>
+  <text x="24" y="56" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">Seeds, their equidistant cell wall, and two surface normals across a crease. The givens.</text>
+
+  <!-- 1D CVT line -->
+  <g>
+    <text x="24" y="96" fill="#83C167" font-family="Georgia,serif" font-size="13">1D Voronoi: seeds slide to cell centroids</text>
+    <line x1="60" y1="130" x2="600" y2="130" stroke="#9aa6bd" stroke-width="1.6"/>
+    <!-- domain ticks 0 and 1 -->
+    <line x1="60" y1="124" x2="60" y2="136" stroke="#9aa6bd" stroke-width="1.4"/>
+    <line x1="600" y1="124" x2="600" y2="136" stroke="#9aa6bd" stroke-width="1.4"/>
+    <text x="56" y="152" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">0</text>
+    <text x="596" y="152" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">1</text>
+
+    <!-- Voronoi boundary b at midpoint (x=276 => 0.4) -->
+    <line x1="276" y1="108" x2="276" y2="152" stroke="#FC6255" stroke-width="1.6" stroke-dasharray="5 4"/>
+    <text x="266" y="104" fill="#FC6255" font-family="Georgia,serif" font-size="13" font-style="italic">b</text>
+
+    <!-- seed x1 at 0.2 (x=168), centroid coincides -->
+    <circle cx="168" cy="130" r="5" fill="#FFD54A"/>
+    <text x="158" y="174" fill="#FFD54A" font-family="Georgia,serif" font-size="13" font-style="italic">x&#8321;=c&#8321;</text>
+    <!-- seed x2 at 0.6 (x=384), centroid c2 at 0.7 (x=438) -->
+    <circle cx="384" cy="130" r="5" fill="#FFD54A"/>
+    <text x="376" y="174" fill="#FFD54A" font-family="Georgia,serif" font-size="13" font-style="italic">x&#8322;</text>
+    <circle cx="438" cy="130" r="4" fill="none" stroke="#9CE8D6" stroke-width="1.6"/>
+    <text x="426" y="118" fill="#9CE8D6" font-family="Georgia,serif" font-size="13" font-style="italic">c&#8322;</text>
+    <!-- move arrow x2 -> c2 -->
+    <line x1="392" y1="130" x2="430" y2="130" stroke="#FFD54A" stroke-width="2" marker-end="url(#arr)"/>
+
+    <!-- cell brackets -->
+    <text x="120" y="196" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">V&#8321;=[0,0.4]</text>
+    <text x="320" y="196" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">V&#8322;=[0.4,1]</text>
+  </g>
+
+  <!-- normal-lifting setup: surface with a crease -->
+  <g>
+    <text x="24" y="252" fill="#83C167" font-family="Georgia,serif" font-size="13">Lift each point with its normal: &#934;(x)=(x, s&#183;N(x))</text>
+    <!-- flat panel then bent panel forming a crease -->
+    <path d="M70 360 L250 360" fill="none" stroke="#9CE8D6" stroke-width="2.2"/>
+    <path d="M250 360 L380 286" fill="none" stroke="#9CE8D6" stroke-width="2.2"/>
+    <!-- crease marker -->
+    <circle cx="250" cy="360" r="3.5" fill="#FC6255"/>
+    <text x="232" y="384" fill="#FC6255" font-family="Georgia,serif" font-size="12" font-style="italic">crease</text>
+
+    <!-- point x on flat with normal N(x) up -->
+    <circle cx="150" cy="360" r="4.5" fill="#FFD54A"/>
+    <text x="138" y="382" fill="#58C4DD" font-family="Georgia,serif" font-size="13" font-style="italic">x</text>
+    <line x1="150" y1="360" x2="150" y2="300" stroke="#9CE8D6" stroke-width="2" marker-end="url(#arrT)"/>
+    <text x="158" y="306" fill="#9CE8D6" font-family="Georgia,serif" font-size="13" font-style="italic">N(x)</text>
+
+    <!-- point x' on bent panel with tilted normal -->
+    <circle cx="318" cy="324" r="4.5" fill="#FFD54A"/>
+    <text x="326" y="338" fill="#58C4DD" font-family="Georgia,serif" font-size="13" font-style="italic">x&#8242;</text>
+    <line x1="318" y1="324" x2="364" y2="284" stroke="#9CE8D6" stroke-width="2" marker-end="url(#arrT)"/>
+    <text x="356" y="280" fill="#9CE8D6" font-family="Georgia,serif" font-size="13" font-style="italic">N(x&#8242;)</text>
+
+    <!-- 3D chord between points -->
+    <line x1="150" y1="360" x2="318" y2="324" stroke="#FFD54A" stroke-width="1.6" stroke-dasharray="4 3"/>
+    <text x="200" y="356" fill="#FFD54A" font-family="Georgia,serif" font-size="12" font-style="italic">&#8741;x&#8722;x&#8242;&#8741;</text>
+  </g>
+
+  <!-- given scaffold relations -->
+  <g>
+    <rect x="430" y="248" width="266" height="150" rx="8" fill="#0d1626" stroke="#26324d" stroke-width="1.2"/>
+    <text x="446" y="274" fill="#9CE8D6" font-family="Georgia,serif" font-size="13">given (cell wall is equidistant):</text>
+    <text x="446" y="300" fill="#e7edf7" font-family="Georgia,serif" font-size="15" font-style="italic">&#8741;y&#8722;x&#7522;&#8741; = &#8741;y&#8722;x&#11388;&#8741; on &#8706;V&#7522;</text>
+    <text x="446" y="332" fill="#9CE8D6" font-family="Georgia,serif" font-size="13">given (per-cell mass &amp; centroid):</text>
+    <text x="446" y="358" fill="#e7edf7" font-family="Georgia,serif" font-size="15" font-style="italic">m&#7522;=&#8747;&#961;dy,&#160; c&#7522;=&#8721;</text>
+    <text x="446" y="386" fill="#9aa6bd" font-family="Georgia,serif" font-size="12">boundary terms cancel &#8594; clean &#8711;F</text>
+  </g>
+
+  <text x="24" y="436" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">From these givens, construct the gradient 2m&#7522;(x&#7522;&#8722;c&#7522;) and the lifted distance &#8741;x&#8722;x&#8242;&#8741;&#178;+s&#178;&#8741;N&#8722;N&#8242;&#8741;&#178;. Derive them.</text>
+</svg>

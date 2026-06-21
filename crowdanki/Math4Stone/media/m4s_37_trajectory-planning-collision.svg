@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" role="img" aria-label="A configuration space with start and goal, grey obstacle regions, a straight line that collides shown dashed red, and a valid collision-free path weaving around the obstacles">
+  <defs>
+    <pattern id="gt" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1d2740" stroke-width="1"/></pattern>
+    <marker id="mt" markerWidth="10" markerHeight="10" refX="7" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#FFD54A"/></marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#gt)" opacity="0.4"/>
+
+  <!-- C-space boundary -->
+  <rect x="70" y="60" width="580" height="360" rx="8" fill="none" stroke="#3f5a86" stroke-width="2"/>
+  <text x="86" y="84" fill="#6f86a8" font-family="Georgia, serif" font-style="italic" font-size="15">C_free</text>
+
+  <!-- obstacles -->
+  <rect x="250" y="90" width="110" height="150" rx="14" fill="#3a3f52" stroke="#5a6076" stroke-width="1.5"/>
+  <rect x="360" y="280" width="170" height="90" rx="14" fill="#3a3f52" stroke="#5a6076" stroke-width="1.5"/>
+  <rect x="470" y="100" width="90" height="110" rx="14" fill="#3a3f52" stroke="#5a6076" stroke-width="1.5"/>
+  <text x="290" y="170" fill="#9aa6bd" font-family="Georgia, serif" font-style="italic" font-size="14">C_obs</text>
+
+  <!-- straight line that collides -->
+  <line x1="130" y1="360" x2="590" y2="120" stroke="#FC6255" stroke-width="2" stroke-dasharray="7 6" opacity="0.85"/>
+  <text x="300" y="330" fill="#FC6255" font-family="Georgia, serif" font-size="13">straight path collides</text>
+
+  <!-- valid path (polyline) -->
+  <polyline points="130,360 200,300 230,250 210,180 300,120 400,250 470,260 540,180 590,120" fill="none" stroke="#FFD54A" stroke-width="3.5" marker-end="url(#mt)"/>
+
+  <!-- start / goal -->
+  <circle cx="130" cy="360" r="8" fill="#83C167"/>
+  <text x="100" y="392" fill="#83C167" font-family="Georgia, serif" font-style="italic" font-size="14">q_start</text>
+  <text x="560" y="108" fill="#FFD54A" font-family="Georgia, serif" font-size="22">&#9733;</text>
+  <text x="556" y="150" fill="#FFD54A" font-family="Georgia, serif" font-style="italic" font-size="14">q_goal</text>
+
+  <text x="36" y="40" fill="#58C4DD" font-family="Georgia, serif" font-size="20">Find a collision-free path through configuration space</text>
+  <text x="86" y="438" fill="#6f7d97" font-family="Georgia, serif" font-size="13">construct the requirement: &#964;:[0,1]&#8594;C_free,  &#964;(0)=q_start,  &#964;(1)=q_goal,  &#964;&#8745;C_obs=&#8709;</text>
+</svg>

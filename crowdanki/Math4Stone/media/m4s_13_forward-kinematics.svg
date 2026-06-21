@@ -1,0 +1,69 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#FFD54A"/>
+    </marker>
+    <marker id="ahb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#58C4DD"/>
+    </marker>
+    <marker id="ahg" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#83C167"/>
+    </marker>
+  </defs>
+
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="38" fill="#58C4DD" font-size="22" font-style="italic">Forward kinematics: the 2R chain and its screw axes</text>
+  <text x="24" y="60" fill="#9aa6bd" font-size="13">Given the home pose M, axes S&#8321;, S&#8322; (in space frame) construct the tool pose T(&#952;)</text>
+
+  <!-- base frame {s} at origin -->
+  <g>
+    <line x1="120" y1="360" x2="200" y2="360" stroke="#FC6255" stroke-width="2.5" marker-end="url(#ah)"/>
+    <line x1="120" y1="360" x2="120" y2="280" stroke="#83C167" stroke-width="2.5" marker-end="url(#ahg)"/>
+    <circle cx="120" cy="360" r="4" fill="#9CE8D6"/>
+    <text x="206" y="364" fill="#FC6255" font-size="13" font-style="italic">x</text>
+    <text x="126" y="278" fill="#83C167" font-size="13" font-style="italic">y</text>
+    <text x="92" y="382" fill="#58C4DD" font-size="14" font-style="italic">{s}</text>
+  </g>
+
+  <!-- link 1 (L1=2) from base to joint 2 -->
+  <line x1="120" y1="360" x2="400" y2="360" stroke="#9aa6bd" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+  <text x="248" y="384" fill="#9CE8D6" font-size="13" font-style="italic">L&#8321; = 2</text>
+
+  <!-- link 2 (L2=1) -->
+  <line x1="400" y1="360" x2="540" y2="360" stroke="#9aa6bd" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+  <text x="450" y="384" fill="#9CE8D6" font-size="13" font-style="italic">L&#8322; = 1</text>
+
+  <!-- joint 1 : screw axis S1 (omega +z out of plane) at origin q1 -->
+  <circle cx="120" cy="360" r="13" fill="none" stroke="#FFD54A" stroke-width="2.5"/>
+  <circle cx="120" cy="360" r="3" fill="#FFD54A"/>
+  <path d="M138 348 a20 20 0 0 1 -6 -22" fill="none" stroke="#FFD54A" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="142" y="332" fill="#FFD54A" font-size="13" font-style="italic">&#952;&#8321;</text>
+  <text x="80" y="404" fill="#FFD54A" font-size="12">S&#8321;: &#969;=(0,0,1), q&#8321;=(0,0,0)</text>
+
+  <!-- joint 2 : screw axis S2 at q2=(2,0,0) -->
+  <circle cx="400" cy="360" r="13" fill="none" stroke="#FFD54A" stroke-width="2.5"/>
+  <circle cx="400" cy="360" r="3" fill="#FFD54A"/>
+  <path d="M418 348 a20 20 0 0 1 -6 -22" fill="none" stroke="#FFD54A" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="422" y="332" fill="#FFD54A" font-size="13" font-style="italic">&#952;&#8322;</text>
+  <text x="330" y="430" fill="#FFD54A" font-size="12">S&#8322;: &#969;=(0,0,1), q&#8322;=(2,0,0)</text>
+
+  <!-- tool frame {b} at home tip (3,0) -->
+  <g>
+    <line x1="540" y1="360" x2="600" y2="360" stroke="#FC6255" stroke-width="2" marker-end="url(#ah)" opacity="0.9"/>
+    <line x1="540" y1="360" x2="540" y2="300" stroke="#83C167" stroke-width="2" marker-end="url(#ahg)" opacity="0.9"/>
+    <circle cx="540" cy="360" r="4" fill="#58C4DD"/>
+    <text x="528" y="392" fill="#58C4DD" font-size="14" font-style="italic">{b}</text>
+    <text x="500" y="340" fill="#9aa6bd" font-size="12">home tip (3,0)</text>
+  </g>
+
+  <!-- given scaffold relation -->
+  <line x1="120" y1="408" x2="540" y2="408" stroke="#58C4DD" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+  <text x="556" y="412" fill="#58C4DD" font-size="12" font-style="italic">given:  v&#7522; = &#8722;&#969; &#215; q&#7522;</text>
+
+  <text x="24" y="448" fill="#9aa6bd" font-size="12" font-style="italic">Each joint is a screw about a fixed space-frame axis; M places the tool at zero configuration.</text>
+</svg>

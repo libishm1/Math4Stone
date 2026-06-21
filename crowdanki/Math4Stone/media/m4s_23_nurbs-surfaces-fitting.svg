@@ -1,0 +1,82 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl cap">
+  <title id="ttl">Fitting a B-spline surface to a scan: residual to least-squares</title>
+  <desc id="cap">An unorganized cloud is resampled onto an ordered (u,v) grid; the fit minimizes the per-node residual S(u,v) - Q.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#FFD54A"/>
+    </marker>
+    <marker id="ahr" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0 0L7 3L0 6Z" fill="#FC6255"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="24" y="34" fill="#58C4DD" font-family="Georgia, serif" font-size="20">NURBS surface fitting: from cloud to least-squares residual</text>
+  <text x="24" y="54" fill="#9aa6bd" font-family="Georgia, serif" font-size="12.5">Resample the cloud onto an ordered (u,v) grid, then minimize the residual at each node.</text>
+
+  <!-- LEFT: unorganized scan cloud -->
+  <text x="70" y="92" fill="#9CE8D6" font-family="Georgia, serif" font-size="13">unorganized scan cloud  Q</text>
+  <g fill="#9aa6bd">
+    <circle cx="62" cy="150" r="3"/><circle cx="92" cy="128" r="3"/><circle cx="120" cy="168" r="3"/>
+    <circle cx="78" cy="196" r="3"/><circle cx="138" cy="138" r="3"/><circle cx="108" cy="208" r="3"/>
+    <circle cx="150" cy="190" r="3"/><circle cx="86" cy="172" r="3"/><circle cx="128" cy="112" r="3"/>
+    <circle cx="60" cy="118" r="3"/><circle cx="160" cy="156" r="3"/><circle cx="100" cy="150" r="3"/>
+  </g>
+
+  <!-- given: PCA template plane -->
+  <polygon points="48,250 178,232 196,300 66,318" fill="#58C4DD" fill-opacity="0.10" stroke="#58C4DD" stroke-width="1.2"/>
+  <text x="60" y="338" fill="#58C4DD" font-family="Georgia, serif" font-size="12">PCA template plane (given)</text>
+  <!-- u,v axes on the plane -->
+  <line x1="70" y1="288" x2="150" y2="276" stroke="#FFD54A" stroke-width="2.2" marker-end="url(#ah)"/>
+  <line x1="70" y1="288" x2="84" y2="234" stroke="#83C167" stroke-width="2.2" marker-end="url(#ah)"/>
+  <text x="150" y="270" fill="#FFD54A" font-family="Georgia, serif" font-size="13">u</text>
+  <text x="88" y="232" fill="#83C167" font-family="Georgia, serif" font-size="13">v</text>
+
+  <!-- arrow: resample -->
+  <line x1="205" y1="200" x2="285" y2="200" stroke="#9aa6bd" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="208" y="190" fill="#9aa6bd" font-family="Georgia, serif" font-size="11">resample</text>
+
+  <!-- MIDDLE: ordered (u,v) grid of nodes Q_rs -->
+  <text x="300" y="92" fill="#9CE8D6" font-family="Georgia, serif" font-size="13">ordered grid  Q&#8341;&#8347;</text>
+  <g stroke="#26324d" stroke-width="1">
+    <line x1="310" y1="120" x2="430" y2="120"/><line x1="310" y1="160" x2="430" y2="160"/>
+    <line x1="310" y1="200" x2="430" y2="200"/><line x1="310" y1="240" x2="430" y2="240"/>
+    <line x1="310" y1="120" x2="310" y2="240"/><line x1="350" y1="120" x2="350" y2="240"/>
+    <line x1="390" y1="120" x2="390" y2="240"/><line x1="430" y1="120" x2="430" y2="240"/>
+  </g>
+  <g fill="#9CE8D6">
+    <circle cx="310" cy="120" r="3"/><circle cx="350" cy="120" r="3"/><circle cx="390" cy="120" r="3"/><circle cx="430" cy="120" r="3"/>
+    <circle cx="310" cy="160" r="3"/><circle cx="350" cy="160" r="3"/><circle cx="390" cy="160" r="3"/><circle cx="430" cy="160" r="3"/>
+    <circle cx="310" cy="200" r="3"/><circle cx="350" cy="200" r="3"/><circle cx="390" cy="200" r="3"/><circle cx="430" cy="200" r="3"/>
+    <circle cx="310" cy="240" r="3"/><circle cx="350" cy="240" r="3"/><circle cx="390" cy="240" r="3"/><circle cx="430" cy="240" r="3"/>
+  </g>
+
+  <!-- arrow: fit -->
+  <line x1="448" y1="180" x2="520" y2="180" stroke="#9aa6bd" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="452" y="170" fill="#9aa6bd" font-family="Georgia, serif" font-size="11">fit S(u,v)</text>
+
+  <!-- RIGHT: fitted surface row of control net + one node residual -->
+  <text x="540" y="92" fill="#58C4DD" font-family="Georgia, serif" font-size="13">fitted surface  S(u,v)</text>
+  <path d="M535 200 C575 140 625 250 695 160" fill="none" stroke="#58C4DD" stroke-width="2.4"/>
+  <!-- control points -->
+  <g fill="#FFD54A">
+    <circle cx="535" cy="200" r="3.5"/><circle cx="585" cy="150" r="3.5"/><circle cx="640" cy="220" r="3.5"/><circle cx="695" cy="160" r="3.5"/>
+  </g>
+  <polyline points="535,200 585,150 640,220 695,160" fill="none" stroke="#FFD54A" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="600" y="138" fill="#FFD54A" font-family="Georgia, serif" font-size="12">control net  P&#8345;&#8344;</text>
+
+  <!-- residual vector: data node Q to surface point S -->
+  <circle cx="640" cy="278" r="4" fill="#9CE8D6"/>
+  <text x="612" y="300" fill="#9CE8D6" font-family="Georgia, serif" font-size="12">Q&#8341;&#8347;</text>
+  <line x1="640" y1="278" x2="640" y2="208" stroke="#FC6255" stroke-width="2.2" marker-end="url(#ahr)"/>
+  <text x="650" y="248" fill="#FC6255" font-family="Georgia, serif" font-size="12.5">residual  S - Q</text>
+
+  <!-- given scaffold relation -->
+  <rect x="120" y="392" width="480" height="44" rx="6" fill="#0e1116" stroke="#26324d" stroke-width="1"/>
+  <text x="138" y="412" fill="#9aa6bd" font-family="Georgia, serif" font-size="12.5">given (scaffold):  S is linear in P, so minimizing &#931; |S - Q|&#178; over the grid is</text>
+  <text x="138" y="430" fill="#9aa6bd" font-family="Georgia, serif" font-size="12.5">an ordinary least-squares problem in the control net P.</text>
+</svg>

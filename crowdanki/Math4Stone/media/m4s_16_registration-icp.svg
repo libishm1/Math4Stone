@@ -1,0 +1,61 @@
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ttl cap">
+  <title id="ttl">Kabsch-Umeyama setup: two centered clouds and the rotation to derive</title>
+  <desc id="cap">Source and target point clouds centered on their centroids; the cross-covariance H of the centered points is the given scaffold from which the optimal rotation R is constructed.</desc>
+  <defs>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#26324d" stroke-width="1"/>
+    </pattern>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#FFD54A"/>
+    </marker>
+    <marker id="ahb" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#58C4DD"/>
+    </marker>
+  </defs>
+  <rect width="720" height="460" fill="#0e1116"/>
+  <rect width="720" height="460" fill="url(#grid)"/>
+
+  <text x="22" y="34" fill="#58C4DD" font-family="Georgia,serif" font-size="20">Kabsch-Umeyama: align two centered clouds by one rotation</text>
+  <text x="22" y="54" fill="#9aa6bd" font-family="Georgia,serif" font-size="13">Given centered points and their cross-covariance H, derive the R that best maps source onto target.</text>
+
+  <!-- SOURCE cloud, left -->
+  <text x="150" y="92" fill="#FC6255" font-family="Georgia,serif" font-size="14" text-anchor="middle">source  p&#771;&#7522; = p&#7522; - p&#772;</text>
+  <circle cx="150" cy="250" r="3.5" fill="#58C4DD"/>
+  <text x="150" y="268" fill="#9CE8D6" font-family="Georgia,serif" font-size="12" text-anchor="middle">p&#772;</text>
+  <!-- source points -->
+  <circle cx="110" cy="210" r="4" fill="#FC6255"/>
+  <circle cx="200" cy="205" r="4" fill="#FC6255"/>
+  <circle cx="205" cy="290" r="4" fill="#FC6255"/>
+  <circle cx="105" cy="295" r="4" fill="#FC6255"/>
+  <!-- offset vectors from centroid -->
+  <line x1="150" y1="250" x2="110" y2="210" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="150" y1="250" x2="200" y2="205" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="150" y1="250" x2="205" y2="290" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="150" y1="250" x2="105" y2="295" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <!-- TARGET cloud, right (source rotated ~90 deg CCW) -->
+  <text x="560" y="92" fill="#83C167" font-family="Georgia,serif" font-size="14" text-anchor="middle">target  q&#771;&#7522; = q&#7522; - q&#772;</text>
+  <circle cx="560" cy="250" r="3.5" fill="#58C4DD"/>
+  <text x="560" y="268" fill="#9CE8D6" font-family="Georgia,serif" font-size="12" text-anchor="middle">q&#772;</text>
+  <circle cx="520" cy="290" r="4" fill="#83C167"/>
+  <circle cx="525" cy="200" r="4" fill="#83C167"/>
+  <circle cx="605" cy="205" r="4" fill="#83C167"/>
+  <circle cx="600" cy="295" r="4" fill="#83C167"/>
+  <line x1="560" y1="250" x2="520" y2="290" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="560" y1="250" x2="525" y2="200" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="560" y1="250" x2="605" y2="205" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="560" y1="250" x2="600" y2="295" stroke="#FFD54A" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <!-- rotation arrow between clouds -->
+  <path d="M255 200 Q 360 150 455 200" fill="none" stroke="#58C4DD" stroke-width="2" marker-end="url(#ahb)"/>
+  <text x="360" y="150" fill="#58C4DD" font-family="Georgia,serif" font-size="15" text-anchor="middle">R = ?  (derive)</text>
+
+  <!-- given scaffold box -->
+  <rect x="232" y="330" width="256" height="92" rx="8" fill="#11202e" stroke="#26324d"/>
+  <text x="360" y="354" fill="#9aa6bd" font-family="Georgia,serif" font-size="12" text-anchor="middle">given (scaffold)</text>
+  <text x="360" y="380" fill="#9CE8D6" font-family="Georgia,serif" font-size="15" text-anchor="middle">H = &#931;&#7522; p&#771;&#7522; q&#771;&#7522;&#7488;   (cross-covariance)</text>
+  <text x="360" y="406" fill="#9CE8D6" font-family="Georgia,serif" font-size="14" text-anchor="middle">max&#7523; tr(R H),  t = q&#772; &#8722; R p&#772;</text>
+
+  <text x="150" y="332" fill="#9aa6bd" font-family="Georgia,serif" font-size="11" text-anchor="middle">centroids already aligned</text>
+  <text x="560" y="332" fill="#9aa6bd" font-family="Georgia,serif" font-size="11" text-anchor="middle">only rotation left</text>
+</svg>
